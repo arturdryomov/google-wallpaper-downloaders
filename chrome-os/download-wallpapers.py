@@ -44,8 +44,10 @@ def download_wallpapers():
 
 
 def create_wallpapers_path():
-    if not os.path.exists(get_wallpapers_path()):
-        os.makedirs(get_wallpapers_path())
+    wallpapers_path = get_wallpapers_path()
+
+    if not os.path.exists(wallpapers_path):
+        os.makedirs(wallpapers_path)
 
 
 def get_wallpapers_path():
@@ -65,8 +67,8 @@ def get_wallpaper_url(wallpaper_info):
 
 
 def get_wallpaper_path(wallpaper_url):
-    wallpaper_filename = get_wallpaper_filename(wallpaper_url)
     wallpapers_path = get_wallpapers_path()
+    wallpaper_filename = get_wallpaper_filename(wallpaper_url)
 
     return os.path.join(wallpapers_path, wallpaper_filename)
 
