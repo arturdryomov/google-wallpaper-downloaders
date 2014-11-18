@@ -45,8 +45,10 @@ def download_wallpapers():
 
 
 def create_wallpapers_path():
-    if not os.path.exists(get_wallpapers_path()):
-        os.makedirs(get_wallpapers_path())
+    wallpapers_path = get_wallpapers_path()
+
+    if not os.path.exists(wallpapers_path):
+        os.makedirs(wallpapers_path)
 
 
 def get_wallpapers_path():
@@ -69,7 +71,7 @@ def get_wallpaper_info(wallpaper_id):
 
 
 def get_wallpaper_info_url(wallpaper_id):
-    return urlparse.urljoin(REMOTE_URL, "{id}.json".format(url=REMOTE_URL, id=wallpaper_id))
+    return urlparse.urljoin(REMOTE_URL, "{id}.json".format(id=wallpaper_id))
 
 
 def get_wallpaper_path(wallpaper_id):
