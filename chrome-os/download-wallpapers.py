@@ -33,11 +33,13 @@ def download_wallpapers():
     create_wallpapers_path()
 
     print(":: Downloading Chrome OS wallpapers.")
+
     for wallpaper_info in get_wallpapers_info()["wallpaper_list"]:
         wallpaper_url = get_wallpaper_url(wallpaper_info)
         wallpaper_path = get_wallpaper_path(wallpaper_url)
 
         print(wallpaper_url)
+
         download_wallpaper(wallpaper_url, wallpaper_path)
 
 
@@ -65,6 +67,7 @@ def get_wallpaper_url(wallpaper_info):
 def get_wallpaper_path(wallpaper_url):
     wallpaper_filename = get_wallpaper_filename(wallpaper_url)
     wallpapers_path = get_wallpapers_path()
+
     return os.path.join(wallpapers_path, wallpaper_filename)
 
 
