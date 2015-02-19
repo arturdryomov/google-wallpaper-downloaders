@@ -16,7 +16,8 @@ $ python2 chrome-os/download-wallpapers.py
 $ python2 maps/download-wallpapers.py
 ```
 
-By default wallpapers will be downloaded to your home `Downloads` directory.
+Wallpapers will be downloaded to relative `wallpapers` directories,
+such as `chrome-os/wallpapers` and `maps/wallpapers`.
 
 Be wary of download sizes: Chrome OS wallpapers are 200+ MB combined and Maps are 650+ MB.
 

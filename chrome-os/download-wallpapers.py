@@ -28,7 +28,7 @@ import urlparse
 REMOTE_URL = "https://storage.googleapis.com/chromeos-wallpaper-public/"
 REMOTE_MANIFEST = "manifest_en.json"
 
-LOCAL_PATH = "~/Downloads/Wallpapers/Chrome OS/"
+LOCAL_PATH = "wallpapers"
 
 
 def download_wallpapers():
@@ -53,7 +53,9 @@ def create_wallpapers_path():
 
 
 def get_wallpapers_path():
-    return os.path.abspath(os.path.expanduser(LOCAL_PATH))
+    wallpapers_path = os.path.dirname(os.path.realpath(__file__))
+
+    return os.path.abspath(os.path.join(wallpapers_path, LOCAL_PATH))
 
 
 def get_wallpapers_info():

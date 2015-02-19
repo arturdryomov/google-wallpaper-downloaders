@@ -27,7 +27,7 @@ import urlparse
 REMOTE_URL = "https://www.gstatic.com/prettyearth/"
 REMOTE_IDS_PATH = "ids.json"
 
-LOCAL_PATH = "~/Downloads/Wallpapers/Google Maps/"
+LOCAL_PATH = "wallpapers"
 
 
 def download_wallpapers():
@@ -54,7 +54,9 @@ def create_wallpapers_path():
 
 
 def get_wallpapers_path():
-    return os.path.abspath(os.path.expanduser(LOCAL_PATH))
+    wallpapers_path = os.path.dirname(os.path.realpath(__file__))
+
+    return os.path.abspath(os.path.join(wallpapers_path, LOCAL_PATH))
 
 
 def get_wallpaper_ids():
